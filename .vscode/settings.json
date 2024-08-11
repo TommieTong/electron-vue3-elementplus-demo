@@ -1,0 +1,21 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsc.autoDetect": "off",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/*electron-builder.json5",
+        "/*electron-builder.json"
+      ],
+      "url": "https://json.schemastore.org/electron-builder"
+    }
+  ],
+  "npm.exclude": [
+    "**/plugins/**"
+  ],
+  "i18n-ally.localesPaths": [
+    "src/locales",
+    "release/1.0.1/win-unpacked/locales",
+    "release/1.0.0/win-unpacked/locales"
+  ]
+}

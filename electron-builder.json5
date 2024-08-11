@@ -1,0 +1,41 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  appId: "YourAppID",
+  asar: true,
+  icon: "public/favicon.ico",
+  directories: {
+    output: "release/${version}",
+  },
+  files: ["dist-electron", "dist"],
+  mac: {
+    // 注意mac的icon和windows的是不一样的
+    icon: "public/icons/icon.icns",
+    artifactName: "${productName}_${version}.${ext}",
+    target: ["dmg"],
+  },
+  win: {
+    icon: "public/icons/icon.ico",
+    target: [
+      {
+        target: "nsis",
+        arch: ["x64"],
+      },
+    ],
+    artifactName: "${productName}_${version}.${ext}",
+  },
+  nsis: {
+    oneClick: false,
+    perMachine: false,
+    allowToChangeInstallationDirectory: true,
+    deleteAppDataOnUninstall: false,
+  },
+  // 配置安装包更新地址
+  publish: [
+    {
+      provider: "generic",
+      url: "http://common.longzipeng.online/package/auto",
+    },
+  ],
+}
